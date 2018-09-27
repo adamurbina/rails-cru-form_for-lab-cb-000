@@ -3,6 +3,7 @@ class GenresController < ApplicationController
   end
 
   def create
+    @genre = Genre.new(genre_params(:name))
     
   end
 
