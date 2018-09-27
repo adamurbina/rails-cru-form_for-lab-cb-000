@@ -13,6 +13,11 @@ class ArtistsController < ApplicationController
   def new
   end
 
+  def update
+    @artist = Artist.find(params[:id])
+    @artist.update(artist_params(:name, :bio))
+  end
+
   def artist_params(*args)
     params.require(:artist).permit(*args)
   end
@@ -20,4 +25,5 @@ class ArtistsController < ApplicationController
   def edit
     @artist = Artist.find(params[:id])
   end
+
 end
