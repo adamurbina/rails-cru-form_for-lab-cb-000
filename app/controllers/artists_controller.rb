@@ -16,4 +16,8 @@ class ArtistsController < ApplicationController
   def artist_params(*args)
     params.require(:artist).permit(*args)
   end
+
+  def edit
+    @artist = Artist.find(params[:id])
+  end
 end
